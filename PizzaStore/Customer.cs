@@ -6,16 +6,21 @@ namespace PizzaStore
 {
     public class Customer
     {
+        #region Instance Fields
         private string _name;
         private string _address;
         private string _phoneNumber;
+        #endregion
 
+        #region Constructor
         public Customer(string name, string address, string phoneNumber)
         {
             _name = name;
             _address = address;
             _phoneNumber = phoneNumber;
         }
+        #endregion 
+
         #region Properties
         public string Name
         {
@@ -30,8 +35,12 @@ namespace PizzaStore
             get { return _phoneNumber; }
         }
         #endregion
-        #region methods
-       
+
+        #region Methods
+        public override string ToString()
+        {
+            return $"Name: - {Name} Address: {Address} - Phonenumber: {PhoneNumber}";
+        }
         #endregion 
     }
 }

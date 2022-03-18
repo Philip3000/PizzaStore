@@ -6,10 +6,11 @@ namespace PizzaStore
     {
         static void Main(string[] args)
         {
+            PizzaStore Code = new PizzaStore();
+            Code.Start();
             Console.WriteLine("Press any key to continue");
-            Account ac1 = new Account("Jens", "Peter", "+45 91871747", "sørenpeter@gmail.com", "maglegårdsvej", "2tv");
-            ac1.GetDeliveryInfo();
             Console.ReadKey();
+            
         }
     }
 }

@@ -4,16 +4,15 @@ using System.Text;
 
 namespace PizzaStore
 {
-        #region instance fields
     public class Account
     {
+        #region instance fields
         private string _firstName;
         private string _lastName;
         private string _phoneNumber;
         private string _mail;
         private string _streetName;
         private string _streetNumber;
-        private bool _signIn;
         #endregion 
 
         #region constructor
@@ -59,18 +58,19 @@ namespace PizzaStore
         }
         #endregion    
         
-        #region method
+        #region Method
         public void GetDeliveryInfo()
         {
-            Console.WriteLine($"Vej: {StreetName} nr: {StreetNumber} tlf: {PhoneNumber}");
+            Console.WriteLine($"Road: {StreetName} nr: {StreetNumber} Phone: {PhoneNumber}");
         }
         public string GetAccountInfo()
         {
             return FirstName + LastName + Mail + StreetName + StreetNumber + PhoneNumber;
         }
-        public void SignIn()
-        { 
-                if (_mail == Mail) { Console.WriteLine($"Sign in successfull"); }
+      
+        public override string ToString()
+        {
+            return $"First name: {FirstName} - Last name: {LastName} - Phone number: {PhoneNumber} - Mail: {Mail} - Streetname: {StreetName} - StreetNumber {StreetNumber}";
         }
         #endregion
     }
