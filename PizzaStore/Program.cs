@@ -6,11 +6,7 @@ namespace PizzaStore
     {
         static void Main(string[] args)
         {
-            PizzaStore Code = new PizzaStore();
-            Code.Start();
-            Console.WriteLine("Press any key to continue");
-            Console.ReadKey();
-            
+           UserDialog.Run(); 
         }
     }
 }

@@ -10,6 +10,8 @@ namespace PizzaStore
         private string _name;
         private string _address;
         private string _phoneNumber;
+        //Customer customer = new Customer("", "", "");
+        List<Customer> AllCustomers = new List<Customer>();
         #endregion
 
         #region Constructor
@@ -40,6 +42,22 @@ namespace PizzaStore
         public override string ToString()
         {
             return $"Name: - {Name} Address: {Address} - Phonenumber: {PhoneNumber}";
+        }
+        string phone = "";
+        public void PrintCustomer(string phone)
+        {
+            foreach (Customer c in AllCustomers)
+                if (c.PhoneNumber == phone)
+                {
+                    Console.WriteLine(c);
+                }
+        }
+        public void PrintAllCustomers()
+        {
+            foreach (Customer c in AllCustomers)
+            {
+                 Console.WriteLine(c);
+            }
         }
         #endregion 
     }

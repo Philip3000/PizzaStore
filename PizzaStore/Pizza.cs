@@ -4,57 +4,63 @@ using System.Text;
 
 namespace PizzaStore
 {
-    public class Pizza
+    public class Pizza 
     {
         #region Instance Fields
         private string _pizzaType;
         private int _price;
         private string _pizzaTopping;
         private int _toppingPrice;
-        #endregion 
+        private int _pizzaId;
+
+        #endregion
 
         #region Constructor
-        public Pizza(string pizzaType, int price)
+        public Pizza(int PizzaId, string PizzaType, int Price)
         {
-            _pizzaType = pizzaType;
-            _price = price;
-            _pizzaTopping = "";
-            _toppingPrice = 0;
+            _pizzaId = PizzaId;
+            _pizzaType = PizzaType;
+            _price = Price;
+            _toppingPrice = ToppingPrice;
+            _pizzaTopping = PizzaTopping;
         }
-        #endregion 
+            
+        #endregion
 
         #region Properties
-        public string PizzaType
-        {
-            get { return _pizzaType; }
-        }
-        public int Price
-        {
-            get { return _price; }
-            set { _price = value; }
-        }
-        public string PizzaTopping
-        {
-            get { return _pizzaTopping; }
-            set { _pizzaTopping = value; }
-        }
-        public int ToppingPrice
-        {
-            get { return _toppingPrice; }
-            set { _toppingPrice = value; }
-        }
+        public string PizzaType { get; set; }
+
+        public int Price { get; set; }
+        public string PizzaTopping { get; set; }
+
+        public int ToppingPrice { get; set;}
+        
+        public int PizzaId { get; set; }
+
         #endregion
 
         #region Methods
-        public void addAndPrint(string PizzaTopping, int ToppingPrice)
+        public void addToppingAndPrint(string PizzaTopping, int ToppingPrice)
         {
             Console.WriteLine($"Extra Topping: {PizzaTopping}");
         }
 
         public override string ToString()
         {
-            return $"Pizza: {PizzaType} - Topping: {PizzaTopping} Price: {Price + ToppingPrice}";
+            return $"Pizza: {PizzaType} - ID: {PizzaId} Price: {Price + ToppingPrice}";
         }
+        public void DeletePizza()
+        {
+            List<Pizza> pizzas = new List<Pizza>();
+            string input = Console.ReadLine().ToString();
+            Pizza pizza = new Pizza(0, "", 0);
+
+            if (input == _pizzaType)
+            {
+                pizzas.Remove(new Pizza(0, input, 0));
+            }
+        }
+        
         #endregion
 
     }

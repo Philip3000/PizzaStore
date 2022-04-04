@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PizzaStore
 {
-    class Order
+    public class Order
     {
         #region Instance Field
         private double _tax;
@@ -17,7 +17,7 @@ namespace PizzaStore
         #region Constructor
         public Order(Pizza pizza, Customer customer)
         {
-            pizza1 = new Pizza("", 0);
+            pizza1 = new Pizza(0, "", 0);
             pizza1 = pizza;
             _tax = 2.5;
             DeliveryCosts = 40;
